@@ -402,7 +402,7 @@ function AuditLogsPage() {
   }, []);
 
   const fetchLogs = async () => {
-    const response = await fetch("/api/audit-logs/");
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/audit-logs/`)
     const data = await response.json();
     setLogs(data);
   };
