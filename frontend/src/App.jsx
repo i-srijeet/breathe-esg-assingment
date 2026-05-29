@@ -18,13 +18,13 @@ function HomePage() {
   }, []);
 
   const fetchBatches = async () => {
-    const response = await fetch("/api/batches/");
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/batches/`);
     const data = await response.json();
     setBatches(data);
   };
 
   const fetchNormalized = async () => {
-    const response = await fetch("/api/normalized/");
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/normalized/`);
     const data = await response.json();
     setNormalized(data);
   };
@@ -79,7 +79,7 @@ function BatchesPage() {
   }, []);
 
   const fetchBatches = async () => {
-    const response = await fetch("/api/batches/");
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/batches/`);
     const data = await response.json();
     setBatches(data);
   };
@@ -163,7 +163,7 @@ function ActivitiesPage() {
   }, []);
 
   const fetchNormalized = async () => {
-    const response = await fetch("/api/normalized/");
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/normalized/`);
     const data = await response.json();
     setNormalized(data);
   };
