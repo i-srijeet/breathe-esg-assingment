@@ -7,6 +7,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import "./App.css";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 function HomePage() {
   const [batches, setBatches] = useState([]);
@@ -169,14 +170,14 @@ function ActivitiesPage() {
   };
 
   const approveRow = async (id) => {
-    await fetch(`/api/approve/${id}/`, {
+    await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/approve/${id}/`, {
       method: "POST",
     });
     fetchNormalized();
   };
 
   const rejectRow = async (id) => {
-    await fetch(`/api/reject/${id}/`, {
+    await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/reject/${id}/`, {
       method: "POST",
     });
     fetchNormalized();
@@ -402,7 +403,7 @@ function AuditLogsPage() {
   }, []);
 
   const fetchLogs = async () => {
-    fetch(`${import.meta.env.VITE_API_BASE_URL}/api/audit-logs/`)
+    await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/audit-logs/`)
     const data = await response.json();
     setLogs(data);
   };
