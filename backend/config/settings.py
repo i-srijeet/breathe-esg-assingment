@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-(h)9j^6=^%$yde+i9ipbs9^$x-x)1l9z&cord5ii93_2l+sh)!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [   "breathe-esg-assingment.onrender.com",
+    "breathe-esg-assingment-frontend.onrender.com",
+    "localhost",
+    "127.0.0.1",]
 
 
 # Application definition
@@ -127,6 +130,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 CORS_ALLOW_ALL_ORIGINS = True
 
+CORS_ALLOWED_ORIGINS = [
+    "https://breathe-esg-assingment-frontend.onrender.com",
+]
+
 CSRF_TRUSTED_ORIGINS = [
-    "https://breathe-esg-assignment.onrender.com",
+    "https://breathe-esg-assignment-frontend.onrender.com",
 ]
